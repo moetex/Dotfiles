@@ -1,0 +1,128 @@
+@import url('file:///home/moe/.cache/wal/colors-waybar.css');
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: 'RobotoMono Nerd Font', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces {
+    border-radius: 20px;
+    margin: 0px 4px;
+}
+
+#workspaces button {
+    background: @color0;
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+#workspaces button:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+#workspaces button:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+#workspaces button.focused {
+    background-color: @color2;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: @color1;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#language,
+#clock {
+    padding: 0 1em;
+    background-color: @color0;
+    color: white;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+.modules-right > widget {
+    margin: 0 4px;
+}
+
+.modules-center > widget {
+    margin: 0 2px;
+}
+
+.modules-center > widget:first-child > *,
+.modules-right > widget:first-child > * {
+    border-radius: 20px 0 0 20px;
+    padding-left: 15px;
+}
+
+.modules-center > widget:last-child > *,
+.modules-right > widget:last-child > * {
+    border-radius: 0 20px 20px 0;
+    padding-right: 15px;
+}
+
+.modules-right > widget:last-child {
+    margin-right: 15px;
+}
+
+#window {
+    margin: 0px 4px;
+}
+
+@keyframes blink {
+    to {
+        background-color: @color0;
+        color: @color1;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: @color1;
+    color: @color0;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected,
+#pulseaudio.muted {
+    color: red;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+label:focus {
+    background-color: #000000;
+}

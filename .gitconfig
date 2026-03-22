@@ -1,0 +1,19 @@
+[user]
+	email = moe.alibr@gmail.com
+  name = Mohammad Alibrahim
+[github]
+  user = moetex
+[core]
+  editor = nvim
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[init]
+  defaultBranch = main
+[diff]
+    tool = nvimdiff
+[difftool]
+  prompt = false
+[merge]
+    tool = nvimdiff
+[mergetool]
+    prompt = false
