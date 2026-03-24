@@ -6,7 +6,7 @@ set $BROWSER firefox
 set $foreground #c0caf5
 set $highlight #bb9af7
 
-set $wallpaper /home/moe/Pictures/Wallpapers/Nature/2.png
+set $wallpaper /home/moe/Pictures/Wallpapers/windows-7-x-arch-linux-fi-2560x1440.jpg
 set $lock_cmd swaylock --daemonize --image $wallpaper
 set $sleep_cmd systemctl suspend
 set $launcher_cmd wofi --show drun --no-actions --insensitive --prompt 'Run' | xargs swaymsg exec --
@@ -33,8 +33,8 @@ bar {
 default_border pixel
 hide_edge_borders smart
 
-gaps inner 0
-gaps outer 0
+gaps inner 5
+gaps outer 5
 
 
 
@@ -51,9 +51,10 @@ input type:keyboard {
     xkb_options grp:win_space_toggle
 }
 
+# bindsym $mod+d exec wofi
 bindsym $mod+d exec ~/.config/rofi/launchers/type-3/launcher.sh
 bindsym $mod+Return exec $TERMINAL
-bindsym $mod+w exec $BROWSER
+#bindsym $mod+w exec $BROWSER
 bindsym $mod+ctrl+q exec loginctl lock-session
 
 bindsym --locked XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
@@ -120,7 +121,7 @@ mode 'resize' {
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
-  
+
     bindsym Escape mode 'default'
 }
 
@@ -139,7 +140,7 @@ exec gammastep
 exec autotiling-rs
 
 # Waybar Icons
-exec_always --no-startup-id workstyle &> /tmp/workstyle.log
+# exec_always --no-startup-id workstyle &> /tmp/workstyle.log
 
 # Clipboard manager
 exec wl-paste --type text --watch clipman store
@@ -149,12 +150,14 @@ include /etc/sway/config.d/*
 
 floating_modifier $mod
 
+bindsym Print exec flameshot gui
+bindsym Shift+Print exec --no-startup-id sh -c 'mkdir -p ~/Pictures/Screenshots && flameshot full -p ~/Pictures/Screenshots'
 
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 #bindsym $mod+s layout stacking
 #bindsym $mod+h splith
 #bindsym $mod+v splitv
-#bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 
 

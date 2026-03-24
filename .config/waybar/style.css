@@ -3,8 +3,8 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: 'RobotoMono Nerd Font', Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-family: 'Iosevka', 'RobotoMono Nerd Font', Helvetica, Arial, sans-serif;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -20,7 +20,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    border-radius: 20px;
+    /* border-radius: 20px; */
     margin: 0px 4px;
 }
 
@@ -30,6 +30,7 @@ window#waybar.hidden {
     padding: 0 10px;
 }
 
+/*
 #workspaces button:first-child {
     border-radius: 20px 0 0 20px;
 }
@@ -37,7 +38,7 @@ window#waybar.hidden {
 #workspaces button:last-child {
     border-radius: 0 20px 20px 0;
 }
-
+*/
 #workspaces button.focused {
     background-color: @color2;
     color: #ffffff;
@@ -58,6 +59,7 @@ window#waybar.hidden {
 #tray,
 #mode,
 #language,
+#mpris,
 #clock {
     padding: 0 1em;
     background-color: @color0;
@@ -79,13 +81,13 @@ window#waybar.hidden {
 
 .modules-center > widget:first-child > *,
 .modules-right > widget:first-child > * {
-    border-radius: 20px 0 0 20px;
+    border-radius: 0; /* 20px 0 0 20px;*/
     padding-left: 15px;
 }
 
 .modules-center > widget:last-child > *,
 .modules-right > widget:last-child > * {
-    border-radius: 0 20px 20px 0;
+    border-radius: 0; /* 0 20px 20px 0;*/
     padding-right: 15px;
 }
 
