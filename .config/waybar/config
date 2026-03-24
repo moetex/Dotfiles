@@ -91,9 +91,9 @@
     "tooltip": false,
     "max-length": 40,
     "player": "spotify",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous",
     "format-icons": { "Playing": "", "Paused": "" }
   },
   "custom/weather": {
