@@ -10,8 +10,8 @@
   "margin-right": 10,
 
   "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["network", "cpu", "memory", "temperature", "mpris"],
-  "modules-right": ["pulseaudio#input", "pulseaudio#output", "battery", "tray", "sway/language", "clock"],
+  "modules-center": [],
+  "modules-right": ["network", "custom/weather", "cpu", "memory", "temperature", "mpris", "pulseaudio#input", "pulseaudio#output", "battery", "tray", "sway/language", "clock"],
 
   "sway/language": {
     "format": "{short}",
@@ -95,5 +95,11 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
     "format-icons": { "Playing": "", "Paused": "" }
-  }
+  },
+  "custom/weather": {
+    "format": "{}",
+    "interval": 1800, 
+    "exec": "curl -s 'https://wttr.in/Bremen?format=1'",
+    "tooltip": false
+  },
 }

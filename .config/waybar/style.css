@@ -60,6 +60,7 @@ window#waybar.hidden {
 #mode,
 #language,
 #mpris,
+#custom-weather,
 #clock {
     padding: 0 1em;
     background-color: @color0;
