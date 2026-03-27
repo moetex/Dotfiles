@@ -11,7 +11,7 @@
 
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": [],
-  "modules-right": ["network", "custom/weather", "cpu", "memory", "temperature", "mpris", "pulseaudio#input", "pulseaudio#output", "battery", "tray", "sway/language", "clock"],
+  "modules-right": ["mpris", "custom/weather", "network", "cpu", "memory", "temperature", "pulseaudio#input", "pulseaudio#output", "battery", "tray", "sway/language", "clock"],
 
   "sway/language": {
     "format": "{short}",
@@ -99,7 +99,7 @@
   "custom/weather": {
     "format": "{}",
     "interval": 1800, 
-    "exec": "curl -s 'https://wttr.in/Bremen?format=1'",
+    "exec": "curl -s 'https://wttr.in/Bremen?format=3'",
     "tooltip": false
-  },
+  }
 }
