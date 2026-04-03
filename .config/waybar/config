@@ -19,6 +19,8 @@
   },
   "sway/workspaces": {
     "disable-scroll": false,
+    "enable-bar-scroll": true,
+    "reverse-scroll": true,
     "all-outputs": false,
     "format": "{name}"
   },
