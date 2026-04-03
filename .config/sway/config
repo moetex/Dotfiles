@@ -160,5 +160,11 @@ bindsym $mod+w layout tabbed
 #bindsym $mod+v splitv
 bindsym $mod+e layout toggle split
 
+for_window [app_id="code"] opacity 0.9
+
+
+set $laptop eDP-1
+bindswitch --reload --locked lid:on  output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
 
 
