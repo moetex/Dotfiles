@@ -1,0 +1,115 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 6,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/submap"
+  ],
+
+  "modules-center": [
+    "hyprland/window"
+  ],
+
+  "modules-right": [
+    "pulseaudio#input",
+    "pulseaudio#output",
+    "network",
+    "battery",
+    "tray",
+    "clock"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  "hyprland/submap": {
+    "format": "↔️{}",
+    "max-length": 15,
+    "tooltip-format": false
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 50
+  },
+
+  "clock": {
+    "format": "{:%a, %B %d, %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " muted",
+    "on-click": "pavucontrol"
+  },
+
+  "pulseaudio#microphone": {
+    "format": " {volume}%",
+    "format-muted": " muted",
+    "on-click": "pavucontrol"
+  },
+
+  "pulseaudio#input": {
+    "format-source": "<span size='large'></span> {volume} %",
+    "format-source-muted": "<span size='large'></span>  Muted",
+    "format": "{format_source}",
+    "tooltip-format": "{source_desc} | {source_volume} %",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%"
+  },
+  "pulseaudio#output": {
+    "format": "<span size='large'>{icon}</span> {volume} %",
+    "format-muted": "<span size='large'> </span>",
+    "format-bluetooth": "<span size='large'>{icon}</span> {volume}% <span size='large'>{format_source}</span>",
+    "format-icons": {
+      "headphone": "",
+      "headset": "",
+      "phone": "",
+      "hdmi": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "network": {
+    "format-wifi": "  {gwaddr}",
+    "format-ethernet": "Connected  ",
+    "tooltip-format": "{essid}, {ifname}, {signalStrength}% ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "on-click": "nm-connection-editor"
+  },
+
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-discharging": " {capacity}%",
+    "format-plugged": " {capacity}%"
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/spotify": {
+    "format": " {}",
+    "max-length": 40,
+    "exec": "playerctl metadata --format '{{artist}} - {{title}}' 2>/dev/null",
+    "interval": 5,
+    "return-type": "text",
+    "on-click": "playerctl play-pause"
+  }
+}
